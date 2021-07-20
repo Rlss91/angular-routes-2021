@@ -36,9 +36,10 @@ export class Page4Component
     //   return false;
     // }
     // return this.allowClose;
-    if (!this.showpopup) {
-      this.showpopup = true;
-    }
-    return this.clikObs;
+    // if (!this.showpopup) {
+    //   this.showpopup = true;
+    // }
+    // return this.clikObs;
+    return confirm('Are you sure');
   }
 }
