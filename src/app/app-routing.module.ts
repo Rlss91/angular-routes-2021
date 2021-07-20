@@ -18,6 +18,7 @@ const appRoutes: Routes = [
     path: 'page2/:id',
     component: Page2Component,
     canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [{ path: ':id', component: Page3Component }],
   },
   { path: 'home', component: HomeComponent },
