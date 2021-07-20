@@ -13,6 +13,9 @@ export class Page3Component implements OnInit {
     this.route.params.subscribe((ob) => {
       console.log('params ob', ob);
     });
+    this.route.data.subscribe((ob) => {
+      console.log('data from delayed', ob);
+    });
   }
 
   backToPage2(): void {

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './can-deactivate-guard.service';
+import { DelayResorver } from './DelayResover.service';
 
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -21,7 +22,13 @@ const appRoutes: Routes = [
     component: Page2Component,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
-    children: [{ path: ':id', component: Page3Component }],
+    children: [
+      {
+        path: ':id',
+        component: Page3Component,
+        resolve: { dataFromResolver: DelayResorver },
+      },
+    ],
   },
   {
     path: 'page4',
