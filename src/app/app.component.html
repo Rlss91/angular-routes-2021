@@ -16,7 +16,11 @@
       >
     </li>
     <li routerLinkActive="selected"><a [routerLink]="['page1']">Page1</a></li>
-    <li>...</li>
+    <li routerLinkActive="selected">
+      <a [routerLink]="['page2', 'ttt']">Page2</a>
+    </li>
+    <li><button (click)="onLogin()">login</button></li>
+    <li><button (click)="onLogout()">logout</button></li>
   </ul>
 </nav>
 
