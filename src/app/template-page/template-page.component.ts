@@ -42,5 +42,6 @@ export class TemplatePageComponent implements OnInit {
   // }
   onSubmit(): void {
     console.log(this.temForm);
+    this.temForm.reset();
   }
 }
