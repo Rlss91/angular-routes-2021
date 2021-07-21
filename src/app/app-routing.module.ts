@@ -9,9 +9,11 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { Page2Component } from './page2/page2.component';
 import { Page3Component } from './page3/page3.component';
 import { Page4Component } from './page4/page4.component';
+import { TemplatePageComponent } from './template-page/template-page.component';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/td', pathMatch: 'full' },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'page1',
     loadChildren: () =>
@@ -35,6 +37,7 @@ const appRoutes: Routes = [
     component: Page4Component,
     canDeactivate: [CanDeactivateGuard],
   },
+  { path: 'td', component: TemplatePageComponent },
   { path: 'home', component: HomeComponent },
   {
     path: 'not-found',

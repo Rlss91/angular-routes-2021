@@ -1,0 +1,42 @@
+<p>template-page works!</p>
+<div class="container">
+  <!-- <form (ngSubmit)="onSubmit(f)" #f="ngForm"> -->
+  <form (ngSubmit)="onSubmit()" #f="ngForm">
+    <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" ngModel required />
+        <button (click)="onGenerateName()">username generator</button>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" ngModel required email />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          name="password"
+          id="password"
+          ngModel
+          required
+          pattern="^[A-Za-z0-9]{8,16}$"
+          #password="ngModel"
+        />
+        <span class="help-block" *ngIf="!password.valid && password.touched">
+          the password must be...
+        </span>
+      </div>
+      <div *ngIf="!userData.valid && userData.touched">
+        Please input correct data and fill the ..
+      </div>
+    </div>
+    <div class="radio" *ngFor="let gen of gender">
+      <label>
+        <input type="radio" name="gender" ngModel [value]="gen" required />
+        {{ gen }}
+      </label>
+    </div>
+    <button [disabled]="!f.valid">Submit</button>
+  </form>
+</div>
